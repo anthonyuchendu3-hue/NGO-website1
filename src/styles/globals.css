@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&family=Calistoga&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-900 bg-white antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-full font-bold 
+           hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform 
+           hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 
+           focus:ring-primary-500 focus:ring-offset-2 inline-flex items-center gap-2;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-heading font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent;
+  }
+}
+
+@keyframes scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.animate-scale {
+  animation: scale 20s ease-in-out infinite;
+}
